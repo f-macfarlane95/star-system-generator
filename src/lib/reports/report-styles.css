@@ -148,3 +148,61 @@
 .theme-corporate .data-content {
     padding: 10px;
 }
+
+
+/* =========================================
+   THEME: Foundation (Coriolis Foundation in WEYLAND STYLE)
+   ========================================= */
+.theme-foundation {
+    --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-header: "Arial Black", sans-serif;
+    --color-text: #222;
+    --color-bg: #fff;
+    --color-border: #000;
+    --border-style: solid;
+    --border-width: 2px;
+    --header-bg: #000;
+}
+
+.theme-foundation .report-header {
+    border-bottom: 4px solid #000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.theme-foundation h1 {
+    font-size: 24pt;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.theme-foundation .confidential-stamp {
+    border: 2px solid #d00;
+    color: #d00;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+    display: inline-block;
+}
+
+.theme-foundation .data-box {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}
+
+.theme-foundation .data-header {
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.theme-foundation .data-content {
+    padding: 10px;
+}

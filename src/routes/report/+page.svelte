@@ -743,9 +743,19 @@
         <div class="header-content">
             <h1>SYSTEM SURVEY REPORT: {system.name.toUpperCase()}</h1>
             <div class="meta-data">
-                <div><strong>DATE:</strong> {new Date().toISOString().split('T')[0]}</div>
-                <div><strong>CLEARANCE:</strong> {mode === 'GM' ? 'ULTRAVIOLET (GM)' : 'PUBLIC'}</div>
-                {#if theme === 'corporate' && mode === 'GM'}
+                {#if theme === 'foundation'}
+                   <div><strong>DATE:</strong> Report Generated on 2-L-TRV 62 CC</div>
+                {:else}
+                    <div><strong>DATE:</strong> {new Date().toISOString().split('T')[0]}</div>
+                {/if}
+                
+                {#if theme === 'foundation'}
+                    <div><strong>CLEARANCE:</strong> {mode === 'GM' ? 'FOUNDATION' : 'PUBLIC'}</div>
+                {:else}
+                    <div><strong>CLASSIFICATION:</strong> {mode === 'GM' ? 'CONFIDENTIAL (GM)' : 'UNRESTRICTED'}</div>
+                {/if}
+                
+                {#if (theme === 'corporate' || theme === 'foundation') && mode === 'GM'}
                     <div class="confidential-stamp">TOP SECRET</div>
                 {/if}
             </div>

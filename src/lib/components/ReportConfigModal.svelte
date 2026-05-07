@@ -4,7 +4,7 @@
   const dispatch = createEventDispatcher();
 
   let selectedMode: 'GM' | 'Player' = 'GM';
-  let selectedTheme: 'retro' | 'corporate' | 'standard' = 'retro';
+  let selectedTheme: 'retro' | 'corporate' | 'foundation' | 'standard' = 'retro';
   let includeConstructs = true;
 
   function generate() {
@@ -50,6 +50,7 @@
       <select bind:value={selectedTheme}>
         <option value="retro">Retro Line Printer</option>
         <option value="corporate">Corporate / Industrial</option>
+        <option value="foundation">Foundation (Coriolis)</option>
         <option value="standard">Standard Clean</option>
       </select>
     </div>
