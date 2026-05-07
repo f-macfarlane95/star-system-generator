@@ -27,3 +27,4 @@ pnpm-debug.log*
 gemini.md
 
 DEV_NOTES.md
+package-lock.json

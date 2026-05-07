@@ -44,6 +44,49 @@
         ]
       }
     },
+    "Coriolis Calendar": {
+      "id": "CORIOLIS_CAL",
+      "math_type": "BUCKET_DRAIN",
+      "epoch_offset_t": "435084559692049800",
+      "format": "{hour:02}:{min:02}:{sec:02}, {weekday} {mday}{suffix} day of the {month}, {year} CC",
+      "hierarchy": [
+        { "unit": "year", "multiplier": 31449600 },
+        { "unit": "day", "multiplier": 93600 },
+        { "unit": "hour", "multiplier": 3600 },
+        { "unit": "min", "multiplier": 60 },
+        { "unit": "sec", "multiplier": 1 }
+      ],
+      "leap_logic": {
+        "drift_per_year_t": 0,
+        "threshold_t": 93600,
+        "apply_to": "day"
+      },
+      "lookup_tables": {
+        "weekdays": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "months": [
+          { "name": "Segment of The Messenger", "days": 37 },
+          { "name": "Segment of The Dancer", "days": 37 },
+          { "name": "Segment of The Gambler", "days": 37 },
+          { "name": "The Founding", "days": 1 },
+          { "name": "Segment of The Deckhand", "days": 37 },
+          { "name": "Segment of The Merchant", "days": 37 },
+          { "name": "Segment of The Judge", "days": 37 },
+          { "name": "The Pilgrimage", "days": 1 },
+          { "name": "Segment of The Traveller", "days": 37 },
+          { "name": "Segment of The Lady of Tears", "days": 37 },
+          { "name": "Segment of The Faceless One", "days": 37 },
+          { "name": "The Cyclade", "days": 1 }
+        ]
+      }
+    },
     "Star Trek Stardate": {
       "id": "TNG_SD",
       "math_type": "RATIO_LINEAR",
