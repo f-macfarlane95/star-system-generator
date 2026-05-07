@@ -8,15 +8,52 @@
         margin: 0.5cm;
         size: A4;
     }
+
     body {
+        height: auto !important;
+        min-height: 0 !important;
+        background: white !important;
         margin: 0;
-        -webkit-print-color-adjust: exact; /* Ensure colors/backgrounds print */
+        -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+
     .no-print {
         display: none !important;
     }
+
+    .new-page {
+        break-before: page;
+        page-break-before: always;
+    }
+
+    /* Keep section heading with following content */
+    .body-details h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    /* Keep star/primary header with its data box */
+    .section-header {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .data-box {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        break-before: avoid;
+        page-break-before: avoid;
+    }
+
+    /* Allow star blocks to split across pages */
+    .star-block {
+        break-inside: auto;
+        page-break-inside: auto;
+    }
 }
+
 
 :root {
     --font-body: sans-serif;
@@ -106,18 +143,18 @@
     --header-bg: #000;
 }
 
-.theme-corporate .report-header {
-    border-bottom: 4px solid #000;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.theme-retro h1, .theme-retro h2, .theme-retro h3 {
+    text-transform: uppercase;
+    border-bottom: 2px dashed var(--color-border);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-.theme-corporate h1 {
-    font-size: 24pt;
-    margin: 0;
-    letter-spacing: -1px;
+.theme-retro h1, .theme-retro h2, .theme-retro h3 {
+    text-transform: uppercase;
+    border-bottom: 2px dashed var(--color-border);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .theme-corporate .confidential-stamp {
@@ -154,55 +191,57 @@
    THEME: Foundation (Coriolis Foundation in WEYLAND STYLE)
    ========================================= */
 .theme-foundation {
-    --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-header: "Arial Black", sans-serif;
-    --color-text: #222;
+    --font-body: "Courier New", Courier, monospace;
+    --font-header: "Courier New", Courier, monospace;
+    --color-text: #333;
     --color-bg: #fff;
-    --color-border: #000;
-    --border-style: solid;
-    --border-width: 2px;
-    --header-bg: #000;
+    --color-border: #333;
+    --border-style: dashed;
+    --border-width: 1px;
+    --header-bg: transparent;
 }
 
-.theme-foundation .report-header {
-    border-bottom: 4px solid #000;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.theme-foundation h1 {
-    font-size: 24pt;
-    margin: 0;
-    letter-spacing: -1px;
-}
-
-.theme-foundation .confidential-stamp {
-    border: 2px solid #d00;
-    color: #d00;
-    padding: 5px 10px;
-    font-weight: bold;
+.theme-foundation h1, .theme-foundation h2, .theme-foundation h3 {
     text-transform: uppercase;
-    transform: rotate(-5deg);
-    display: inline-block;
+    border-bottom: 2px dashed var(--color-border);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .theme-foundation .data-box {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    background: #f9f9f9;
-}
-
-.theme-foundation .data-header {
-    background: #000;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.8em;
-}
-
-.theme-foundation .data-content {
+    border: 1px dashed var(--color-border);
     padding: 10px;
+    margin-bottom: 15px;
 }
+
+.theme-foundation .section-header {
+    background: #f0f0f0; /* Simulates gray bar */
+    font-weight: bold;
+    padding: 5px;
+    border: 1px dashed var(--color-border);
+    margin-bottom: -1px; /* Merge borders */
+}
+
+.theme-foundation table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Courier New", monospace;
+}
+
+.theme-foundation th {
+    text-align: left;
+    border-bottom: 1px dashed var(--color-border);
+    padding: 5px;
+}
+
+.theme-foundation td {
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+
+  .theme-foundation .redacted {
+    color: black;
+    background-color: black;
+    border-radius: 4px;
+    user-select: none; /* Prevents selecting hidden text */
+  }

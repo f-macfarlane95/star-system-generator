@@ -4,7 +4,7 @@
   const dispatch = createEventDispatcher();
 
   let selectedMode: 'GM' | 'Player' = 'GM';
-  let selectedTheme: 'retro' | 'corporate' | 'foundation' | 'standard' = 'retro';
+  let selectedTheme: 'retro' | 'corporate' | 'foundation' | 'standard' = 'foundation';
   let includeConstructs = true;
 
   function generate() {

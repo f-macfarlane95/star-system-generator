@@ -755,8 +755,19 @@
                     <div><strong>CLASSIFICATION:</strong> {mode === 'GM' ? 'CONFIDENTIAL (GM)' : 'UNRESTRICTED'}</div>
                 {/if}
                 
-                {#if (theme === 'corporate' || theme === 'foundation') && mode === 'GM'}
+                {#if (theme === 'corporate') && mode === 'GM'}
                     <div class="confidential-stamp">TOP SECRET</div>
+                {/if}
+                {#if (theme === 'foundation') && mode === 'Player'}
+                <div>
+                    <strong>AUTHOR:</strong>
+                    <span class="redacted">Israa al-Sabir, Chief Survey Officer, Survey Corps, Dabaran</span>
+                </div>
+                {:else}
+                <div>
+                    <strong>AUTHOR:</strong>
+                    <span>Israa al-Sabir, Chief Survey Officer, Survey Corps, Dabaran</span>
+                </div>                
                 {/if}
             </div>
         </div>
@@ -969,7 +980,7 @@
     </section>
 
     <!-- HIERARCHY REPORT (BODIES ONLY) -->
-    <section class="body-details">
+    <section class="body-details new-page">
         <h2>02. CELESTIAL SURVEY</h2>
         
         {#each getSurveyStars() as primary (primary.id)}
