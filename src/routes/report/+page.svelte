@@ -763,7 +763,8 @@
                     <strong>AUTHOR:</strong>
                     <span class="redacted">Israa al-Sabir, Chief Survey Officer, Survey Corps, Dabaran</span>
                 </div>
-                {:else}
+                {/if}
+                {#if (theme === 'foundation') && mode === 'GM'}
                 <div>
                     <strong>AUTHOR:</strong>
                     <span>Israa al-Sabir, Chief Survey Officer, Survey Corps, Dabaran</span>
@@ -827,9 +828,9 @@
                                 {#if !shouldSuppressDiagramBodyLabel(entry, overviewDiagramEntries)}
                                     <text
                                         x={markerX + bodyRadius + 2}
-                                        y={itemY - bodyRadius}
+                                        y={itemY + 6}
                                         class="orbit-label"
-                                        transform={`rotate(-45 ${markerX + bodyRadius + 2} ${itemY - bodyRadius})`}
+                                        transform={`rotate(-45 ${markerX - 10} ${itemY - 10})`}
                                     >
                                         {getDiagramBodyLabel(entry.body)}
                                     </text>
@@ -837,7 +838,7 @@
                                 {#if shouldShowOrbitAuLabel(entry.body)}
                                     {@const auLabel = getOrbitDistanceAuLabel(entry.body as any)}
                                     {#if auLabel}
-                                        <text x={markerX} y={itemY - bodyRadius - 2} text-anchor="end" class="au-label">{auLabel}</text>
+                                        <text x={markerX - bodyRadius - 2} y={itemY - 2} text-anchor="end" class="au-label">{auLabel}</text>
                                     {/if}
                                 {/if}
                             {:else}
